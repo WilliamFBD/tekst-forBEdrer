@@ -41,14 +41,14 @@ if run:
             replaced = False
             for item in wordlist:
                 if word in item[0]["replaced_words"]:
-                    new_line.append(" ".join(rd.choice(item[0]["replacement_words"])))
+                    new_line.append(rd.choice(item[0]["replacement_words"]))
                     replaced = True
             if not replaced:
                 if "be" in word:
                     line = line.replace(word, "BE")
                 else:
                     new_line.append(word)
-        new_text.append("\n".join(new_line))
+        new_text.append(" ".join(new_line))
 
     if os.path.isfile(OUTPUT_FILE_NAME):
         with open(OUTPUT_FILE_NAME, "w") as file:
