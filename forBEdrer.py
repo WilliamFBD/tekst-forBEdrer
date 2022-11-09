@@ -11,10 +11,10 @@ run = True
 
 if not os.path.isfile(INPUT_FILE_NAME):
     run = False
-    error_text.append("Input file does not exist")
+    error_text.append("Input file does not exist.\nPlease create a file named 'input.txt' in the same folder as this program.")
 if not os.path.isfile(WORD_LIST_FILE_NAME):
     run = False
-    error_text.append("Word list file does not exist")
+    error_text.append("Wordlist file does not exist.\nPlease create a file named 'wordlist.txt' in the same folder as this program.")
 
 if run:
     with open(WORD_LIST_FILE_NAME, "r") as file:
@@ -69,8 +69,8 @@ else:
     if os.path.isfile(OUTPUT_FILE_NAME):
         with open(OUTPUT_FILE_NAME, "w") as file:
             for error in error_text:
-                file.write(error + "\n")
+                file.write(error + "\nFind more info in the readme file.")
     else:
         with open(OUTPUT_FILE_NAME, "x") as file:
             for error in error_text:
-                file.write(error + "\n")
+                file.write(error + "\nFind more info in the readme file.")
