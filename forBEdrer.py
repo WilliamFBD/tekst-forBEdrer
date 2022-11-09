@@ -16,7 +16,6 @@ if not os.path.isfile(WORD_LIST_FILE_NAME):
     run = False
     error_text.append("Word list file does not exist")
 
-
 if run:
     with open(WORD_LIST_FILE_NAME, "r") as file:
         text = file.read().splitlines()
@@ -45,7 +44,11 @@ if run:
                     replaced = True
             if not replaced:
                 if "be" in word:
-                    line = line.replace(word, "BE")
+                    new_line.append(word.replace("be", "BE"))
+                elif "Be" in word:
+                    new_line.append(word.replace("Be", "BE"))
+                elif "bE" in word:
+                    new_line.append(word.replace("bE", "BE"))
                 else:
                     new_line.append(word)
         new_text.append(" ".join(new_line))
@@ -60,7 +63,6 @@ if run:
             for line in new_text:
                 file.write(line)
                 file.write("\n")
-
 
 
 else:
