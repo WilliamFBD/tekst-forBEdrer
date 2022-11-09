@@ -1,5 +1,0 @@
-Input file does not exist.
-Please create a file named 'input.txt' in the same folder as this program.
-Wordlist file does not exist.
-Please create a file named 'wordlist.txt' in the same folder as this program.
-For more information, please refer to the README file.
