@@ -1,2 +1,2 @@
-erstatter11;erstatter12=ersatt11;ersatt12
-erstatter21;erstatter22=ersatt21;ersatt22
+BEdre=bedre
+ForBEdring=forbedring
