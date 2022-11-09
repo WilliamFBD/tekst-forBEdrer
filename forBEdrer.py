@@ -9,15 +9,20 @@ wordlist = []
 
 with open(WORD_LIST_FILE_NAME, "r") as file:
     data = file.read().splitlines()
-    list = []
+    split_data = []
     for line in data:
-        list.append(line.split('='))
+        split_data.append(line.split('='))
 
-for line in list:
-    print(line)
+for line in split_data:
     replacement_words = line[0].split(";")
     replaced_words = line[1].split(";")
 
-    wordlist.append([{"replacement_words": replacement_words,"replaced_words": replaced_words}])
+    wordlist.append([{"replacement_words": replacement_words, "replaced_words": replaced_words}])
 
-print(wordlist)
+with open(INPUT_FILE_NAME, "r") as file:
+    data = file.read().splitlines()
+    for line in data:
+        for word in line.split(" "):
+            for item in wordlist:
+                if word in item[0]["replaced_words"]:
+                    line = line.replace(word, rd.choice(item[0]["replacement_words"]))
