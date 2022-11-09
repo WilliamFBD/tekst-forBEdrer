@@ -69,8 +69,10 @@ else:
     if os.path.isfile(OUTPUT_FILE_NAME):
         with open(OUTPUT_FILE_NAME, "w") as file:
             for error in error_text:
-                file.write(error + "\nFind more info in the readme file.")
+                file.write(error + "\n")
+            file.write("For more information, please refer to the README file.")
     else:
         with open(OUTPUT_FILE_NAME, "x") as file:
             for error in error_text:
-                file.write(error + "\nFind more info in the readme file.")
+                file.write(error + "\n")
+            file.write("For more information, please refer to the README file.")
