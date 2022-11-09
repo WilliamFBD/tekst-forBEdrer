@@ -1,2 +1,0 @@
-BEdre=bedre
-ForBEdring=forbedring
